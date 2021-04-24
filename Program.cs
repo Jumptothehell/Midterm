@@ -1,30 +1,42 @@
 ﻿using System;
 
-namespace stairs
+namespace Testmidterm_workshop
 {
     class Program
     {
         static void Main(string[] args)
         {
-            char character = char.Parse(Console.ReadLine());
-            int width;
-            int amount = int.Parse(Console.ReadLine());
-            int high = int.Parse(Console.ReadLine());
-            int Amount0fStair = int.Parse(Console.ReadLine());
+            float x, y,dx,dy, step, x1, y1, x2, y2;
+            x1 = float.Parse(Console.ReadLine());
+            y1 = float.Parse(Console.ReadLine());
+            x2 = float.Parse(Console.ReadLine());
+            y2 = float.Parse(Console.ReadLine());
 
-            for (int k = 1; k <= Amount0fStair; k++)
+            dx = x2 - x1;
+            dy = y2 - y1;
+
+            if (Math.Abs(dx) >= Math.Abs(dy))
             {
-                width = amount * k;
-                for (int j = 1; j <= high; j++)
-                {
-                    for (int i = 1; i <= width; i++)
-                    {
-                        Console.Write(character);
-                    }
-                    Console.WriteLine("");
-                }
-
+                step = Math.Abs(dx);
             }
+            else
+            {
+                step = Math.Abs(dy);
+            }
+
+            dx /= step;
+            dy /= step;
+            x = x1;
+            y = y1;
+
+            for (int i = 1; i <= step; i++)
+            {
+                Console.WriteLine("x = {0}", x);
+                Console.WriteLine("y = {0}", y);
+                x += dx;
+                y += dy;
+            }
+            Console.ReadLine();
         }
     }
 }
