@@ -1,66 +1,30 @@
 ﻿using System;
 
-namespace Midterm_5
+namespace stairs
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int days = int.Parse(Console.ReadLine());
-            int times = int.Parse(Console.ReadLine());
-            string menu = Console.ReadLine();
-            int breakfast = 5;
-            int Weekend = 2;
-            int cofee = 3;
+            char character = char.Parse(Console.ReadLine());
+            int width;
+            int amount = int.Parse(Console.ReadLine());
+            int high = int.Parse(Console.ReadLine());
+            int Amount0fStair = int.Parse(Console.ReadLine());
 
-            while (menu != "End")
-            {                
-                switch (menu)
+            for (int k = 1; k <= Amount0fStair; k++)
+            {
+                width = amount * k;
+                for (int j = 1; j <= high; j++)
                 {
-                    case "Breakfast Set":
-                        if (breakfast != 0)
-                        {
-                            if (times > 11)
-                            { Console.WriteLine("Sorry your order is not available"); }
-                            else
-                            { breakfast = breakfast - 1; }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Sorry your order is out of stock");
-                        }                     
-                        break;
-                    case "Weekend Set":
-                        if (Weekend != 0)
-                        {
-                            if (days >= 1 && days <= 5)
-                            { Console.WriteLine("Sorry your order is not available"); }
-                            else
-                            { Weekend = Weekend - 1; }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Sorry your order is out of stock");
-                        }
-                        break;
-                    case "Coffee":
-                        if (cofee != 0)
-                        {
-                            cofee = cofee - 1;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Sorry your order is out of stock");
-                        }
-                        break;
-                    default:
-                        Console.WriteLine("Please enter a valid menu");
-                        break;
+                    for (int i = 1; i <= width; i++)
+                    {
+                        Console.Write(character);
+                    }
+                    Console.WriteLine("");
                 }
-                menu = Console.ReadLine();
-            }
-            Console.ReadLine();
 
+            }
         }
     }
 }
